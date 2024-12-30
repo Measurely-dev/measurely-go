@@ -1,4 +1,4 @@
-# Measurely Golang Package
+# Measurely-go
 
 This is the official Golang package for interacting with the Measurely API. It allows you to easily track custom metrics and send them to Measurely for analysis and reporting. You can capture metrics through the `Capture` function, authenticate using an API key, and receive responses to track the success or failure of each API call.
 
