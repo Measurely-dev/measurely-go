@@ -7,7 +7,7 @@ This is the official Golang package for interacting with the Measurely API. It a
 To use the Measurely package in your Golang project, you need to import it and initialize it with your Measurely API key.
 
 ```bash
-go get github.com/measurely/measurely-go
+go get github.com/measurely-dev/measurely-go
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ Before you can send any metrics to Measurely, you need to initialize the package
 package main
 
 import (
-	"github.com/measurely/measurely-go"
+	"github.com/measurely-dev/measurely-go"
 	"fmt"
 )
 
@@ -40,7 +40,7 @@ The `Capture` function is used to send metric data to Measurely. You need to pas
 package main
 
 import (
-	"github.com/measurely/measurely-go"
+	"github.com/measurely-dev/measurely-go"
 	"fmt"
 )
 
