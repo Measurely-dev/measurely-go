@@ -11,6 +11,7 @@ import (
 // CapturePayload defines the structure of the data sent to the Measurely API.
 type CapturePayload struct {
 	Value int `json:"value"` // The metric value to be recorded.
+	Filters map[string]string `json:"filters"` // Optional filters for categorizing the metric.
 }
 
 // CaptureResult defines the structure of the result returned by the Measurely API.
