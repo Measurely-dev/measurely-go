@@ -12,7 +12,7 @@ go get github.com/measurely-dev/measurely-go
 
 ## Usage
 
-### 1. Initialize the Measurely package
+### 1. Initialize the Measurely Package
 
 Before you can send any metrics to Measurely, you need to initialize the package with your API key. The `Init` function accepts your API key as a string and sets it for use in subsequent API calls.
 
@@ -48,9 +48,13 @@ func main() {
 	// Initialize the Measurely package with your API key
 	measurely.Init("YOUR_API_KEY")
 
-	// Create a metric payload
+	// Create a metric payload with value and optional filters
 	payload := measurely.CapturePayload{
 		Value: 42,
+		Filters: map[string]string{
+			"environment": "production",
+			"region":      "us-east",
+		},
 	}
 
 	// Capture the metric and get the result
@@ -86,7 +90,7 @@ The `Capture` function returns a `CaptureResult` struct that contains two fields
 - **Description**: Sends a metric value to Measurely for tracking.
 - **Parameters**:
   - `metric_identifier`: The unique identifier for the metric you are capturing.
-  - `payload`: A `CapturePayload` struct that contains the metric value to be recorded.
+  - `payload`: A `CapturePayload` struct that contains the metric value to be recorded and optional filters.
 - **Returns**: A `CaptureResult` struct that contains the success status and response message.
 
 ### Types
@@ -95,13 +99,15 @@ The `Capture` function returns a `CaptureResult` struct that contains two fields
 
 ```go
 type CapturePayload struct {
-    Value int `json:"value"` // The metric value to be recorded.
+    Value   int               `json:"value"`  // The metric value to be recorded.
+    Filters map[string]string `json:"filters"` // Optional filters for categorizing the metric.
 }
 ```
 
 - **Description**: This struct defines the data payload that is sent to the Measurely API when capturing a metric.
 - **Fields**:
   - `Value` (int): The metric value that you want to track.
+  - `Filters` (map[string]string): Optional key-value pairs for categorizing the metric (e.g., "environment": "production").
 
 #### `CaptureResult`
 
