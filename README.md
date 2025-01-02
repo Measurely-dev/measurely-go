@@ -122,3 +122,12 @@ type CaptureResult struct {
 - **Fields**:
   - `Success` (bool): Indicates if the metric capture was successful.
   - `Message` (string): Contains the server's response or an error message.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request to improve the [library](https://github.com/measurely-dev/measurely-go.git).
+
+## License
+
+This library is licensed under the MIT License.
+
